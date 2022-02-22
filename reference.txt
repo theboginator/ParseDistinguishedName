@@ -1,0 +1,25 @@
+Input file:
+
+CN=Domain Admins,CN=Users,DC=altecmexio,DC=mx,DC=bsch
+CN=Lucia\, Anthony,OU=Backoffice,OU=SoverignBankUsers,DC=altecmexio,DC=mx,DC=bsch
+
+structures:
+token:
+    -string code (CN, OU, DC, etc)
+    -string value (all text to right of =)
+DNentry:
+    -token[] distName (contains the entire row of an input file, which represents a distinguished name)
+    -string commonName (contains the contents of the first "DN" token)
+    -token[] DCcode (all tokens of code DC in the entry)
+    -string formattedURL (value of all DC-type tokens, separated by ".")
+
+functions:
+break file into rows (separated by \n)
+break row into tokens (separated by ',' but EXCLUDE '\,')
+get first CN token and format as name
+get all tokens with code DC, format as url with "." in between
+write "name,url.url.url" to output txt file
+
+analyze(file){
+
+}
