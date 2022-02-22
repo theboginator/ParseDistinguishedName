@@ -1,5 +1,6 @@
 /*
- *
+ * Given a DN provided as an argument (in quotes) this script will return the URL of the DC via console.
+ * If no arguments are provided, this script will attempt to open "input_DN.txt" and read each DN in the file, output URLs written to "output_DN.txt"
  */
 
 #include <iostream>
